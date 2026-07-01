@@ -1,0 +1,174 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #0f172a;
+  background: #dbeafe;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.28), transparent 34rem),
+    linear-gradient(135deg, #eff6ff 0%, #dbeafe 55%, #e0e7ff 100%);
+}
+
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.app-shell {
+  width: min(940px, 100%);
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.hero-card, .packing-card, .modal-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+}
+
+.hero-card {
+  padding: 28px;
+  color: white;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #2563eb 100%);
+}
+
+.hero-topline, .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.app-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.hero-card h1 {
+  margin: 18px 0 8px;
+  font-size: clamp(2.1rem, 7vw, 4.2rem);
+  line-height: 0.95;
+}
+
+.hero-card p {
+  margin: 0;
+  max-width: 620px;
+  color: #dbeafe;
+  font-size: 1.05rem;
+}
+
+.list-switcher {
+  margin: 18px 0;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 0;
+}
+
+.tab, .new-list-button, .add-row button, .secondary, .danger {
+  border: 0;
+  border-radius: 999px;
+  padding: 11px 15px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.tab {
+  background: rgba(255, 255, 255, 0.72);
+  color: #334155;
+}
+
+.tab.active, .new-list-button, .add-row button {
+  background: #0f172a;
+  color: white;
+}
+
+.new-list-button, .add-row button, .secondary, .danger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.modal-card { margin-bottom: 18px; padding: 18px; }
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.icon-button { border: 0; background: #f1f5f9; border-radius: 12px; width: 36px; height: 36px; display: grid; place-items: center; }
+
+.packing-card { padding: 22px; }
+.packing-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.eyebrow { color: #64748b; font-size: 0.9rem; }
+.packing-card h2 { margin: 6px 0 0; font-size: clamp(1.8rem, 6vw, 3rem); }
+.progress-pill { background: #dcfce7; color: #166534; border-radius: 999px; padding: 9px 13px; font-weight: 900; }
+.progress-track { margin-top: 20px; height: 14px; border-radius: 999px; background: #e2e8f0; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg, #22c55e, #16a34a); transition: width 0.2s ease; }
+.progress-label { margin: 8px 0 18px; color: #64748b; font-weight: 800; }
+
+.add-row { display: flex; gap: 10px; }
+.add-row input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid #cbd5e1;
+  border-radius: 18px;
+  padding: 14px 15px;
+  background: white;
+}
+
+.items { margin-top: 18px; display: grid; gap: 10px; }
+.item-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 13px;
+  font-weight: 750;
+}
+.item-row.packed { color: #64748b; }
+.item-row.packed span { text-decoration: line-through; }
+.check-button, .delete-item { border: 0; background: transparent; padding: 4px; display: grid; place-items: center; }
+.check-button { color: #16a34a; }
+.delete-item { color: #94a3b8; }
+.empty-state { text-align: center; padding: 32px; color: #64748b; background: #f8fafc; border-radius: 20px; }
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+.secondary { background: #e2e8f0; color: #0f172a; }
+.danger { background: #fee2e2; color: #991b1b; }
+
+@media (max-width: 620px) {
+  .app-shell { padding: 12px; }
+  .hero-card, .packing-card { border-radius: 24px; }
+  .list-switcher { align-items: stretch; flex-direction: column; }
+  .tabs { width: 100%; }
+  .add-row { flex-direction: column; }
+  .add-row button { width: 100%; }
+  .packing-header { align-items: stretch; flex-direction: column; }
+  .progress-pill { align-self: flex-start; }
+  .actions > button { flex: 1 1 100%; }
+}
