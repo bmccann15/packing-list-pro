@@ -25,11 +25,18 @@ jobs:
 
       - name: Install dependencies
         run: |
+          pwd
+          ls -la
+          cat package.json
           npm install --no-audit --no-fund
+          ls -la node_modules/react
           npm list react vite lucide-react
 
       - name: Build
-        run: npm run build
+        run: |
+          pwd
+          ls -la
+          npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
