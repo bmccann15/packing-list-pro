@@ -1,0 +1,21 @@
+{
+  "name": "Packing List Pro",
+  "short_name": "Packing List Pro",
+  "description": "Create and manage packing lists for any trip.",
+  "start_url": "/packing-list-pro/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/packing-list-pro/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/packing-list-pro/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
